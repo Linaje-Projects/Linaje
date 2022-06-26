@@ -236,8 +236,12 @@ public class App {
 	}
 	
 	public static AppDefaults getDefaults() {
-		if (defaults == null)
+		if (defaults == null) {
 			defaults = new AppDefaults();
+			//Init default App first to get locale form config file
+			if (currentApp == null)
+				getCurrentApp();
+		}
 		return defaults;
 	}
 	
