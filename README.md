@@ -1,7 +1,7 @@
 # Linaje Framework
 
 Linaje Framework is a set of utilities to make it easy to create Java Standard applications and Java applications with Swing-based UIs.
-It is divided into Linaje Core and Linaje UI.
+It is divided into Linaje Core and Linaje GUI.
 
 It is completely independent and has no dependencies on external libraries other than JDK / OpenJDK.
 
