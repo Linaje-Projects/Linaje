@@ -5,7 +5,7 @@ Está dividido en Linaje Core y Linaje UI.
 
 Es totalmente independiente y no tiene dependencias con otras librerías externas distintas al JDK / OpenJDK.
 
-Está en Español y en Inglés, pero es fácilmente traducible a otros idiomas ya que los Strings descriptivos y de mensajes están en ficheros de localización.
+Está en Español y en [Inglés](README.md), pero es fácilmente traducible a otros idiomas ya que los Strings descriptivos y de mensajes están en ficheros de localización.
 
 
 
