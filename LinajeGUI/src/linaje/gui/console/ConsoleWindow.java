@@ -103,6 +103,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 
 		//Texts in linaje.gui.localization.linaje.properties
 		
+		public String console;
 		public String consoleFull;
 		public String previousTraces;
 		public String btnConnectTip;
@@ -780,7 +781,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 		setSize(600, 800);
 		setContentPane(getMainPanel());
 		
-		setTitle("Consola " + getAppName());
+		setTitle(TEXTS.console + getAppName());
 				
 		addButtonsToEditor();
 		loadConsoleConfig();
