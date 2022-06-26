@@ -1,7 +1,7 @@
 # Linaje Framework
 
 Linaje Framework is a set of utilities to make it easy to create Java Standard applications and Java applications with Swing-based UIs.
-It is divided into Linaje Core and Linaje UI.
+It is divided into Linaje Core and Linaje GUI.
 
 It is completely independent and has no dependencies on external libraries other than JDK / OpenJDK.
 
@@ -12,7 +12,7 @@ It is in [Spanish](README_ES.md) and English, but it is easily translatable to o
 
 ## Linaje Core
 
-Linaje Core is made up of non-visual classes independent of Swing packages. Utilities to work with Strings, Lists, Files, Traces & logs, Reflection, communication between applications, location, among many others.
+Linaje Core is made up of non-visual classes independent of Swing packages. Utilities to work with Strings, Lists, Files, Traces & logs, Reflection, communication between applications, localization, among many others.
 
 Run some LinajeCore tests:
 ```
