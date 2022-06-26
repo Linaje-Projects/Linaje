@@ -93,6 +93,6 @@ public class Constants {
 	public static final String CHARSET_UTF_8 = StandardCharsets.UTF_8.name();			//Eight-bit UCS Transformation Format
 	public static final String CHARSET_UTF_16 = StandardCharsets.UTF_16.name();			//Sixteen-bit UCS Transformation Format, byte order identified by an optional byte-order mark
 
-	public static final String CHARSET_DEFAULT = CHARSET_ISO_8859_1;
+	public static final String CHARSET_DEFAULT = CHARSET_UTF_8;
 		
 }
