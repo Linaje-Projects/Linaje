@@ -34,6 +34,7 @@ import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -152,8 +153,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 	private HashMap<String, LCheckBox> mapDataChecks = null;
 	private static final String DATA_CHECK_NAME = "dataConsole";
 	
-	private static InetAddress IP = null;
-	
+	private InetAddress ip = null;
 	private ConsoleProtocol csp = null;
 	
 	private Color foreground = new Color(216, 216, 216);
@@ -170,12 +170,13 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 	private List<String> dataTypeNames = null;
 	
 	public ConsoleWindow() {
-		this(null, null);
+		this(null, null, null);
 	}
-	public ConsoleWindow(String appName, List<String> dataTypeNames) {
+	public ConsoleWindow(String appName, List<String> dataTypeNames, String host) {
 		super();
 		setAppName(appName);
 		setDataTypeNames(dataTypeNames);
+		setHost(host);
 		initialize();
 	}
 	
@@ -581,7 +582,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 	}
 	
 	private String getHostName() {
-		String[] tokens = Strings.split(IP.toString(), "/");
+		String[] tokens = Strings.split(getIp().toString(), "/");
 		return tokens[0];
 	}
 	
@@ -748,18 +749,15 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 	
 		try {
 			
-			if (IP == null) {
-				IP = InetAddress.getLocalHost();
-			}
 			if (retry) {
 				println(TEXTS.waitingForApp + getAppName() + TEXTS.at + getHostName() + " : " + Console.getInstance().getPort(), null);
 				getBtnConnect().setIcon(Icons.CONNECTING);
 				
 				int reintentos = 4;
-				getConnection().initConnectionRetrying(IP.getHostName(), reintentos);
+				getConnection().initConnectionRetrying(getIp().getHostName(), reintentos);
 			}
 			else {
-				getConnection().initConnection(IP.getHostName());
+				getConnection().initConnection(getIp().getHostName());
 			}
 		}
 		catch (Throwable ex) {
@@ -810,15 +808,10 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 			
 			String appName = null;
 			String envID = null;
+			String host = null;
 			List<String> dataTypeNames = null;
 			if (args != null) {
-				String host = App.getParamValue(args, "host");
-				if (host != null) {
-					try {
-						IP = InetAddress.getByName(host);
-					}catch (Throwable ex) {
-					}
-				}
+				host = App.getParamValue(args, "host");
 				String port = App.getParamValue(args, "port");
 				if (port != null) {
 					try {
@@ -850,6 +843,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 					
 				}
 			}
+			
 			if (appName != null)
 				AppGUI.getCurrentAppGUI().setName(appName);
 			if (envID != null)
@@ -857,7 +851,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 			
 			LinajeLookAndFeel.init();
 			
-			ConsoleWindow consoleWindow = new ConsoleWindow(null, dataTypeNames);
+			ConsoleWindow consoleWindow = new ConsoleWindow(null, dataTypeNames, host);
 			
 			AppGUI.getCurrentAppGUI().setFrame(consoleWindow);
 			AppGUI.getCurrentAppGUI().setFrameIcon(Icons.getColorizedIcon(Icons.CONSOLE_48x48, ColorsGUI.getColorApp()));
@@ -958,7 +952,7 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 			String host = dlgConsoleConnection.show(message, hostName);
 			if (host != null) {
 				boolean retry = dlgConsoleConnection.isRetryAlways();
-				IP = InetAddress.getByName(host);
+				setHost(host);
 				getConnection().setPort(Console.getInstance().getPort());
 				if (retry) {
 					getBtnConnect().setIcon(Icons.CONNECTING);
@@ -1096,6 +1090,30 @@ public class ConsoleWindow extends JFrame implements MouseListener, WindowListen
 		if (csp == null)
 			csp = new ConsoleProtocol();
 		return csp;
+	}
+	
+	private void setHost(String host) {
+		try {
+			setIp(host != null ? InetAddress.getByName(host) : null);
+		} catch (UnknownHostException ex) {
+			Console.printException(ex);
+		}
+	}
+	
+	public InetAddress getIp() {
+		if (ip == null) {
+			try {
+				//No cogemos InetAddress.getLocalHost() cuando host sea null porque nos da la IP de la máquina y da problemas de desconexión, InetAddress.getByName(null) si que devuelve la IP localhost 127.0.0.1
+				ip = InetAddress.getByName(null);
+			} catch (UnknownHostException ex) {
+				Console.printException(ex);
+			}
+		}
+		return ip;
+	}
+	
+	public void setIp(InetAddress ip) {
+		this.ip = ip;
 	}
 	
 	private String getAppName() {

@@ -337,7 +337,7 @@ public class Console {
 			String param6 = sb.toString();
 			String param7 = Constants.VOID;
 			String param8 = Constants.VOID;
-			if (envID != null) {
+			if (envID != null && !envID.trim().equals(Constants.VOID)) {
 				param7 = " envID ";
 				param8 = Strings.replace(envID, Constants.SPACE, SEPARATOR_DATA_CONSOLE);
 			}
