@@ -50,8 +50,8 @@ public class Console {
 	
 	private List<String> dataTypeNames = null;
 	
-	public static final String SEPARATOR_DATA_CHECKS = "-";
-	public static final String SEPARATOR_DATA_CONSOLE = "~";
+	public static final String SEPARATOR_DATA_CHECKS = "#45#";
+	public static final String SEPARATOR_DATA_CONSOLE = "#126#";
 	public static final String LINE_BREAK = "@#@";
 	public static final String SEPARATOR_EQUIVALENT = "&#126;";
 	
