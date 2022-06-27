@@ -113,7 +113,7 @@ public class Security {
 			char[] p = {'e','n','c','r','y','p','t','L','I','N','A','J','E','1','2','3','4'};
 			byte[] s;
 			try {
-				s = "saltLinaje1".getBytes(Constants.CHARSET_DEFAULT);
+				s = "saltLinaje1".getBytes(Encryptor.CHARSET_DEFAULT);
 			}
 			catch (Exception e) {
 				s = null;

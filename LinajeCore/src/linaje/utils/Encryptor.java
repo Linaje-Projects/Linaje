@@ -77,6 +77,8 @@ public class Encryptor {
 	private String charSet = null;
 	private char[] pass = null;
 	
+	public static final String CHARSET_DEFAULT = Constants.CHARSET_UTF_8;//Constants.CHARSET_ISO_8859_1;
+	
 	private static Encryptor instance = null;
 	
 	public Encryptor() {
@@ -253,7 +255,7 @@ public class Encryptor {
 	}
 	public String getCharSet() {
 		if (charSet == null)
-			charSet = Constants.CHARSET_DEFAULT;
+			charSet = Encryptor.CHARSET_DEFAULT;
 		return charSet;
 	}
 	public char[] getPass() {

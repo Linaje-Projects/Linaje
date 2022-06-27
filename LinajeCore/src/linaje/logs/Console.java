@@ -550,7 +550,7 @@ public class Console {
 			char[] p = {'e','n','c','r','y','p','t','C','o','n','s','o','l','e','K','e','y','1','2','3','4'};
 			byte[] s;
 			try {
-				s = "saltConsole1".getBytes(Constants.CHARSET_DEFAULT);
+				s = "saltConsole1".getBytes(Encryptor.CHARSET_DEFAULT);
 			}
 			catch (Exception e) {
 				s = null;
