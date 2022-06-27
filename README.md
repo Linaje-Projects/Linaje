@@ -42,7 +42,7 @@ java -cp linajeCore.jar;linajeGUI linaje.gui.tests.TestApp
 If you want to test LinajeLookAndFeel in an application not optimized for this LookAndFeel: -- Others menu --> Open SwingSet
 
 ```
-java -cp linajeCore.jar;linajeGUI;SwingSet2.jar linaje.gui.tests.UITest
+java -cp linajeCore.jar;linajeGUI;[SwingSet2.jar](/LinajeGUI/lib/SwingSet2.jar) linaje.gui.tests.UITest
 ```
 
 Other tests
