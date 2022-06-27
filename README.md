@@ -39,7 +39,7 @@ Application example with Linaje Framework
 java -cp linajeCore.jar;linajeGUI linaje.gui.tests.TestApp
 ```
 
-If you want to test LinajeLookAndFeel in an application not optimized for this LookAndFeel: -- Others menu --> Open [SwingSet](/LinajeGUI/lib/SwingSet2.jar)
+If you want to test LinajeLookAndFeel in an application not optimized for this LookAndFeel: -- Others menu --> Open [SwingSet](https://github.com/Linaje-Projects/Linaje/raw/v0.1.1-alpha-Linaje-Framework/LinajeGUI/lib/SwingSet2.jar)
 
 ```
 java -cp linajeCore.jar;linajeGUI;SwingSet2.jar linaje.gui.tests.UITest
