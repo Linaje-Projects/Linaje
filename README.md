@@ -31,31 +31,31 @@ It is optimized for JAVA8 and has been tested on Windows 10/11 and Linux Mint 20
 
 To optimize LookAndFeel
 ```
-java -cp linajeCore.jar;linajeGUI linaje.gui.ui.UIConfig
+java -cp linajeCore.jar;linajeGUI.jar linaje.gui.ui.UIConfig
 ```
 
 Application example with Linaje Framework
 ```
-java -cp linajeCore.jar;linajeGUI linaje.gui.tests.TestApp
+java -cp linajeCore.jar;linajeGUI.jar linaje.gui.tests.TestApp
 ```
 
-If you want to test LinajeLookAndFeel in an application not optimized for this LookAndFeel: -- Others menu --> Open SwingSet
+If you want to test LinajeLookAndFeel in an application not optimized for this LookAndFeel: -- Others menu --> Open [SwingSet](https://github.com/Linaje-Projects/Linaje/raw/v0.1.1-alpha-Linaje-Framework/LinajeGUI/lib/SwingSet2.jar)
 
 ```
-java -cp linajeCore.jar;linajeGUI;SwingSet2.jar linaje.gui.tests.UITest
+java -cp linajeCore.jar;linajeGUI.jar;SwingSet2.jar linaje.gui.tests.UITest
 ```
 
 Other tests
 ```
-java -cp linajeCore.jar;linajeGUI linaje.gui.tests.TestsLauncher
+java -cp linajeCore.jar;linajeGUI.jar linaje.gui.tests.TestsLauncher
 ```
 
 On linux separate the jars from the classpath with ':' instead of ';'
 ```
-java -cp linajeCore.jar:linajeGUI linaje.gui.ui.UIConfig
+java -cp linajeCore.jar:linajeGUIjar linaje.gui.ui.UIConfig
 ```
 
 If you have problems with 'Assistive Technology' it can be disabled with the following parameter
 ```
-java -Djavax.accessibility.assistive_technologies=" " -cp linajeCore.jar:linajeGUI linaje.gui.ui.UIConfig
+java -Djavax.accessibility.assistive_technologies=" " -cp linajeCore.jar:linajeGUI.jar linaje.gui.ui.UIConfig
 ```
