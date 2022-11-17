@@ -14,6 +14,15 @@ It is in [Spanish](README_ES.md) and English, but it is easily translatable to o
 
 Linaje Core is made up of non-visual classes independent of Swing packages. Utilities to work with Strings, Lists, Files, Traces & logs, Reflection, communication between applications, localization, among many others.
 
+If you are using Maven just add the following dependency to your pom.xml:
+```
+<dependency>
+  <groupId>io.github.linaje-projects</groupId>
+  <artifactId>LinajeCore</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 Run some LinajeCore tests:
 ```
 java -cp linajeCore.jar linaje.tests.Tests
@@ -27,7 +36,14 @@ Linaje GUI is the part of the framework with utilities to facilitate the creatio
 It is optimized for JAVA8 and has been tested on Windows 10/11 and Linux Mint 20.3
 
  
-
+If you are using Maven just add the following dependency to your pom.xml:
+```
+<dependency>
+  <groupId>io.github.linaje-projects</groupId>
+  <artifactId>LinajeGUI</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 To optimize LookAndFeel
 ```
