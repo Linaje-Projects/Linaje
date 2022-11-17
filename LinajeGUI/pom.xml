@@ -12,6 +12,7 @@
     </properties>
     
 	<build>
+		<finalName>LinajeGUI</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		
 		<resources>

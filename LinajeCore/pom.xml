@@ -12,6 +12,7 @@
     </properties>
     
 	<build>
+		<finalName>LinajeCore</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		
 		<resources>
