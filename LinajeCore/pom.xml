@@ -51,7 +51,7 @@
 	<!-- MAVEN CENTRAL DEPLOY-->
 	
 	<build>
-		<finalName>LinajeGUI</finalName>
+		<finalName>LinajeCore</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		
 		<resources>
