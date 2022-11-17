@@ -14,6 +14,15 @@ Está en Español y en [Inglés](README.md), pero es fácilmente traducible a ot
 
 Linaje Core está compuesto de clases no visuales independientes de los paquetes de Swing. Utilidades para trabajar con Strings, Listas, Ficheros, Trazas & logs, Recursividad, comunicación entre aplicaciones, localización, entre muchas otras.
 
+Si usas Maven simplemente añade la siguiente dependencia a tu pom.xml:
+```
+<dependency>
+  <groupId>io.github.linaje-projects</groupId>
+  <artifactId>LinajeCore</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 Ejecutar algunos tests de  LinajeCore:
 ```
 java -cp linajeCore.jar linaje.tests.Tests
@@ -27,7 +36,14 @@ Linaje GUI es la parte del framework con utilidades para facilitar la creación 
 Está optimizado para JAVA8 y se ha probado en Windows 10/11 y en Linux Mint 20.3
 
  
-
+Si usas Maven simplemente añade la siguiente dependencia a tu pom.xml:
+```
+<dependency>
+  <groupId>io.github.linaje-projects</groupId>
+  <artifactId>LinajeGUI</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 Para optimizar el LookAndFeel:
 ```
