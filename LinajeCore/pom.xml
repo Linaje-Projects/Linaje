@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.linaje-projects</groupId>
 	<artifactId>LinajeCore</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	
 	<name>Linaje core</name>
 	<description>Core project for Linaje Framework</description>
