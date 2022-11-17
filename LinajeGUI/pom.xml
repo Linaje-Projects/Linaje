@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Linaje</groupId>
+	<artifactId>LinajeGUI</artifactId>
+	<version>1.0.0</version>
+	
+	<name>Linaje GUI</name>
+	<description>GUI project for Linaje Framework</description>
+	<url>https://github.com/Linaje-Projects/Linaje</url>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Pablo Linaje</name>
+			<email>plinaje@gmail.com</email>
+			<organization>Linaje Projects</organization>
+			<organizationUrl>https://github.com/Linaje-Projects</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/Linaje-Projects/Linaje.git</connection>
+		<developerConnection>scm:git:ssh://github.com/Linaje-Projects/Linaje.git</developerConnection>
+		<url>http://github.com/Linaje-Projects/Linaje/tree/master</url>
+	</scm>
+	
+	<properties>
+        <project.java.version>1.8</project.java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    
+    <!-- MAVEN CENTRAL DEPLOY-->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+	<!-- MAVEN CENTRAL DEPLOY-->
+	
+	<build>
+		<finalName>LinajeGUI</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		
+		<resources>
+			<resource>
+				<directory>resources</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${project.java.version}</source>
+					<target>${project.java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+      
+      <!-- MAVEN CENTRAL DEPLOY PLUGINS-->      
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		 <!-- MAVEN CENTRAL DEPLOY PLUGINS-->
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>LinajeFramework</groupId>
+			<artifactId>LinajeCore</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+	
+</project>
