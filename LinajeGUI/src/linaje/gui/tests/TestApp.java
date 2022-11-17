@@ -57,6 +57,12 @@ public class TestApp {
 		
 		@Override
 		protected void initValues() {
+			/*try {
+				AppGUI.getCurrentAppGUI().initFromConfig("linaje/gui/tests/resources/defaultAppConfig.cfg");
+			} catch (Exception ex) {
+				Console.printException(ex);
+			}*/
+			
 			initValuesFromFieldNames(getClass().getEnclosingClass());
 		}
 	}
@@ -71,7 +77,7 @@ public class TestApp {
 		LinajeLookAndFeel.init();
 		
 		ConsoleWindow.executeConsoleWindow();
-		
+				
 		final LSplashScreen splash = AppGUI.getCurrentAppGUI().getSplashScreen();
 		splash.setUserAuthenticated(false);
 		JFrame frame = splash.showInFrame();

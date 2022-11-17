@@ -364,8 +364,7 @@ public class Strings {
 	public static Rectangle getStringBounds(String str, FontMetrics fm, float x, float y) {
 		Font font = fm.getFont();
 		FontRenderContext frc = fm.getFontRenderContext();
-		GlyphVector gv = font.createGlyphVector(frc, str);
-		return gv.getPixelBounds(null, x, y);
+		return getStringBounds(str, font, frc, x, y);
 	}
 	public static Rectangle getStringBounds(String str, Font font, FontRenderContext frc, float x, float y) {
 		GlyphVector gv = font.createGlyphVector(frc, str);

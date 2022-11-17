@@ -50,8 +50,8 @@ public class Console {
 	
 	private List<String> dataTypeNames = null;
 	
-	public static final String SEPARATOR_DATA_CHECKS = "-";
-	public static final String SEPARATOR_DATA_CONSOLE = "~";
+	public static final String SEPARATOR_DATA_CHECKS = "#45#";
+	public static final String SEPARATOR_DATA_CONSOLE = "#126#";
 	public static final String LINE_BREAK = "@#@";
 	public static final String SEPARATOR_EQUIVALENT = "&#126;";
 	
@@ -337,7 +337,7 @@ public class Console {
 			String param6 = sb.toString();
 			String param7 = Constants.VOID;
 			String param8 = Constants.VOID;
-			if (envID != null) {
+			if (envID != null && !envID.trim().equals(Constants.VOID)) {
 				param7 = " envID ";
 				param8 = Strings.replace(envID, Constants.SPACE, SEPARATOR_DATA_CONSOLE);
 			}
@@ -550,7 +550,7 @@ public class Console {
 			char[] p = {'e','n','c','r','y','p','t','C','o','n','s','o','l','e','K','e','y','1','2','3','4'};
 			byte[] s;
 			try {
-				s = "saltConsole1".getBytes(Constants.CHARSET_DEFAULT);
+				s = "saltConsole1".getBytes(Encryptor.CHARSET_DEFAULT);
 			}
 			catch (Exception e) {
 				s = null;

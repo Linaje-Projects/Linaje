@@ -51,7 +51,6 @@ import javax.swing.plaf.basic.BasicLookAndFeel;
 import javax.swing.text.DefaultEditorKit;
 
 import sun.awt.AppContext;
-import sun.swing.SwingUtilities2;
 import linaje.gui.Icons;
 import linaje.gui.LComponentBorder;
 import linaje.gui.PaintedImageIcon;
@@ -66,6 +65,8 @@ import linaje.utils.Files;
 import linaje.utils.LFont;
 import linaje.utils.Lists;
 import linaje.utils.ReferencedColor;
+import linaje.utils.ReflectAccessSupport;
+import linaje.utils.Security;
 import linaje.utils.StateColor;
 
 @SuppressWarnings("serial")
@@ -268,10 +269,7 @@ public class LinajeLookAndFeel extends BasicLookAndFeel {
 		initResourceBundle(table);
 		
 		//Enable text Antialiasing
-		//Object aaTextInfo = SwingUtilities2.AATextInfo.getAATextInfo(true);
-        //table.put(SwingUtilities2.AA_TEXT_PROPERTY_KEY, aaTextInfo);
-     	System.setProperty("awt.useSystemAAFontSettings","on");
-     	System.setProperty("swing.aatext", "true");
+		enableAAText(table);
         
        	//Iniciamos las propiedades comunes a todos los componentes
 		GeneralUIProperties generalUIProperties = GeneralUIProperties.getInstance();
@@ -379,6 +377,33 @@ public class LinajeLookAndFeel extends BasicLookAndFeel {
 	    
 		createResourceValues(defaults);
 		table.putDefaults(defaults);
+	}
+	
+	private void enableAAText(UIDefaults table) {
+		
+		//Enable text Antialiasing
+		String javaVersion = Security.getSystemProperty(Security.KEY_JAVA_SPECIFICATION_VERSION);
+		if (javaVersion.compareTo("1.8") <= 0) {
+			//Object aaTextInfo = SwingUtilities2.AATextInfo.getAATextInfo(true);
+        	//table.put(SwingUtilities2.AA_TEXT_PROPERTY_KEY, aaTextInfo);
+			
+			//Llamamos por reflexión para que no tengamos errores de compilación en MV superiores a la 1.8
+			try {
+				Class<?> AATextInfo_class = Class.forName("sun.swing.SwingUtilities2$AATextInfo");
+				Class<?> parameterTypes = boolean.class;
+				Object aaTextInfo = ReflectAccessSupport.findMethod("getAATextInfo", parameterTypes, AATextInfo_class).invoke(null, true);
+				
+				Class<?> SwingUtilities2_class = Class.forName("sun.swing.SwingUtilities2");
+				Object AA_TEXT_PROPERTY_KEY = ReflectAccessSupport.findField("AA_TEXT_PROPERTY_KEY", SwingUtilities2_class).get(null);
+				
+				table.put(AA_TEXT_PROPERTY_KEY, aaTextInfo);
+			} 
+			catch (Exception ex) {
+				Console.printException(ex);
+			}
+		}
+     	System.setProperty("awt.useSystemAAFontSettings","on");
+     	System.setProperty("swing.aatext", "true");
 	}
 	
 	private void initTextComponents(UIDefaults table) {

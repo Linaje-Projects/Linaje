@@ -1,11 +1,11 @@
 # Linaje Framework
 
 Linaje Framework es un conjunto de utilidades para facilitar la creación de aplicaciones Java Standard y de aplicaciones Java con UI basada en Swing.
-Está dividido en Linaje Core y Linaje UI.
+Está dividido en Linaje Core y Linaje GUI.
 
 Es totalmente independiente y no tiene dependencias con otras librerías externas distintas al JDK / OpenJDK.
 
-Está en Español y en Inglés, pero es fácilmente traducible a otros idiomas ya que los Strings descriptivos y de mensajes están en ficheros de localización.
+Está en Español y en [Inglés](README.md), pero es fácilmente traducible a otros idiomas ya que los Strings descriptivos y de mensajes están en ficheros de localización.
 
 
 
@@ -31,31 +31,31 @@ Está optimizado para JAVA8 y se ha probado en Windows 10/11 y en Linux Mint 20.
 
 Para optimizar el LookAndFeel:
 ```
-java -cp linajeCore.jar;linajeGUI linaje.gui.ui.UIConfig
+java -cp linajeCore.jar;linajeGUI.jar linaje.gui.ui.UIConfig
 ```
 
 Ejemplo de aplicación con Linaje Framework
 ```
-java -cp linajeCore.jar;linajeGUI linaje.gui.tests.TestApp
+java -cp linajeCore.jar;linajeGUI.jar linaje.gui.tests.TestApp
 ```
 
-Si quieres probar LinajeLookAndFeel en una aplicación no optimizada para este LookAndFeel: -- Menú otros --> Abrir SwingSet
+Si quieres probar LinajeLookAndFeel en una aplicación no optimizada para este LookAndFeel: -- Menú otros --> Abrir [SwingSet](https://github.com/Linaje-Projects/Linaje/raw/v0.1.1-alpha-Linaje-Framework/LinajeGUI/lib/SwingSet2.jar)
 
 ```
-java -cp linajeCore.jar;linajeGUI;SwingSet2.jar linaje.gui.tests.UITest
+java -cp linajeCore.jar;linajeGUI.jar;SwingSet2.jar linaje.gui.tests.UITest
 ```
 
 Otros tests
 ```
-java -cp linajeCore.jar;linajeGUI linaje.gui.tests.TestsLauncher
+java -cp linajeCore.jar;linajeGUI.jar linaje.gui.tests.TestsLauncher
 ```
 
 En linux separa los jars del classpath con ':' en lugar de con ';'
 ```
-java -cp linajeCore.jar:linajeGUI linaje.gui.ui.UIConfig
+java -cp linajeCore.jar:linajeGUI.jar linaje.gui.ui.UIConfig
 ```
 
 Si tienes problemas con 'Assistive Technology' se puede desactivar con el siguiente parámetro
 ```
-java -Djavax.accessibility.assistive_technologies=" " -cp linajeCore.jar:linajeGUI linaje.gui.ui.UIConfig
+java -Djavax.accessibility.assistive_technologies=" " -cp linajeCore.jar:linajeGUI.jar linaje.gui.ui.UIConfig
 ```
