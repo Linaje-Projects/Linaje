@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.linaje-projects</groupId>
 	<artifactId>LinajeGUI</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	
 	<name>Linaje GUI</name>
 	<description>GUI project for Linaje Framework</description>
@@ -144,9 +144,9 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>LinajeFramework</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>LinajeCore</artifactId>
-			<version>1.0.0</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 	
