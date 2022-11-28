@@ -19,7 +19,7 @@ If you are using Maven just add the following dependency to your pom.xml:
 <dependency>
   <groupId>io.github.linaje-projects</groupId>
   <artifactId>LinajeCore</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
@@ -31,7 +31,7 @@ java -cp linajeCore.jar linaje.tests.Tests
 
 ## Linaje GUI
 
-Linaje GUI is the part of the framework with utilities to facilitate the creation of Swing-based applications. The main thing here is the LineageLookAndFeel, which is an easily configurable UI that allows you to quickly customize any new or existing Swing application. In addition, it is also made up of a set of Swing components that allow the creation of applications to be facilitated and to provide them with advanced functionalities in a simple way.
+Linaje GUI is the part of the framework with utilities to facilitate the creation of Swing-based applications. The main thing here is LinajeLookAndFeel, which is an easily configurable UI that allows you to quickly customize any new or existing Swing application. In addition, it is also made up of a set of Swing components that allow the creation of applications to be facilitated and to provide them with advanced functionalities in a simple way.
 
 It is optimized for JAVA8 and has been tested on Windows 10/11 and Linux Mint 20.3
 
@@ -41,7 +41,7 @@ If you are using Maven just add the following dependency to your pom.xml:
 <dependency>
   <groupId>io.github.linaje-projects</groupId>
   <artifactId>LinajeGUI</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
