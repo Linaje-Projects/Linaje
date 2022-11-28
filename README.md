@@ -19,7 +19,7 @@ If you are using Maven just add the following dependency to your pom.xml:
 <dependency>
   <groupId>io.github.linaje-projects</groupId>
   <artifactId>LinajeCore</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
