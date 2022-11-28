@@ -31,7 +31,7 @@ java -cp linajeCore.jar linaje.tests.Tests
 
 ## Linaje GUI
 
-Linaje GUI es la parte del framework con utilidades para facilitar la creación de aplicaciones basadas en Swing. Aquí lo principal es el LinajeLookAndFeel, que es un UI fácilmente configurable que permite personalizar rápidamente cualquier aplicación Swing nueva o ya existente. Además también está compuesto de un conjunto de componentes Swing que permiten facilitar la creción de aplicaciones y de dotarlas con funcionalizades avanzadas de forma sencilla.
+Linaje GUI es la parte del framework con utilidades para facilitar la creación de aplicaciones basadas en Swing. Aquí lo principal es el LinajeLookAndFeel, que es un UI fácilmente configurable que permite personalizar rápidamente cualquier aplicación Swing nueva o ya existente. Además también está compuesto de un conjunto de componentes Swing que facilitan la creción de aplicaciones y las dota con funcionalizades avanzadas de forma sencilla.
 
 Está optimizado para JAVA8 y se ha probado en Windows 10/11 y en Linux Mint 20.3
 
